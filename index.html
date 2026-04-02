@@ -74,7 +74,7 @@
   <div class="tab" onclick="showTab('noite-ac',this)">🌙 Noite AC</div>
   <div class="tab" onclick="showTab('virilha',this)">✿ Virilha</div>
   <div class="tab" onclick="showTab('peeling',this)">✦ Peeling</div>
-  <div class="tab" onclick="showTab('semanal',this)">⚙️ Configuraçao</div>
+  <div class="tab" onclick="showTab('semanal',this)">⚙️ Edit</div>
 </div>
 
 <div class="content active" id="tab-manha">
@@ -235,7 +235,7 @@ function toggleEdit() {
   isEditMode = !isEditMode;
   document.body.classList.toggle('edit-mode');
   const editTab = document.querySelector('.tab:last-child');
-  editTab.innerHTML = isEditMode ? "💾 Salvar" : "⚙️ Configuração";
+  editTab.innerHTML = isEditMode ? "💾 Salvar" : "⚙️ Edit";
   
   if(!isEditMode) {
     alert("Produtos e rituais salvos!");
