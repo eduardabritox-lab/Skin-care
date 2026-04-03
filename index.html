@@ -15,23 +15,21 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--bege-suave); font-family: 'Lora', serif; color: var(--marrom-escuro); min-height: 100vh; padding-bottom: 48px; }
 
-  /* Header e Tabs (Mantidos do seu arquivo) */
   .header { background: linear-gradient(160deg, var(--bege-quente) 0%, var(--terracota-clr) 100%); padding: 32px 20px 24px; text-align: center; }
   .orn { font-family: 'Cormorant Garamond', serif; color: var(--terracota-med); font-size: 16px; letter-spacing: 6px; margin-bottom: 8px; }
   .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--marrom-escuro); letter-spacing: 2px; }
   .header p { font-style: italic; font-size: 12px; color: var(--terracota); margin-top: 8px; }
   .header-line { width: 60px; height: 1px; background: var(--terracota-med); margin: 12px auto; }
 
-  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--bege-quente); border-bottom: 2px solid var(--terracota-clr); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(92,61,46,0.08); }
-  .tabs-row2 { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bege-quente); border-bottom: 2px solid var(--terracota-clr); position: sticky; top: 48px; z-index: 99; box-shadow: 0 2px 12px rgba(92,61,46,0.05); }
-  .tab { padding: 11px 4px; font-size: 10px; color: var(--marrom-claro); cursor: pointer; text-align: center; border-right: 1px solid var(--terracota-clr); transition: 0.3s; }
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--bege-quente); border-bottom: 2px solid var(--terracota-clr); position: sticky; top: 0; z-index: 100; }
+  .tabs-row2 { display: grid; grid-template-columns: repeat(2, 1fr); background: var(--bege-quente); border-bottom: 2px solid var(--terracota-clr); position: sticky; top: 48px; z-index: 99; }
+  .tab { padding: 11px 4px; font-size: 10px; color: var(--marrom-claro); cursor: pointer; text-align: center; border-right: 1px solid var(--terracota-clr); }
   .tab.active { color: var(--terracota); background: var(--bege-suave); font-weight: 600; border-bottom: 2px solid var(--terracota); }
   .tab-emoji { font-size: 16px; display: block; margin-bottom: 2px; }
 
-  /* Estrutura de Steps (Original do seu arquivo) */
   .content { display: none; padding: 20px 16px; max-width: 520px; margin: 0 auto; }
-  .content.active { display: block; animation: fadeIn 0.35s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
+  .content.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   .progress-wrap { background: var(--bege-quente); border-radius: 20px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
   .progress-bar-bg { flex: 1; height: 6px; background: var(--terracota-clr); border-radius: 10px; overflow: hidden; }
@@ -40,7 +38,7 @@
 
   .section-divider { display: flex; align-items: center; gap: 10px; margin: 18px 0 10px; }
   .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--terracota-clr); }
-  .section-divider span { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 3px; color: var(--terracota-med); text-transform: uppercase; white-space: nowrap; }
+  .section-divider span { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 3px; color: var(--terracota-med); text-transform: uppercase; }
 
   .step { background: var(--branco); border-radius: 14px; padding: 15px 16px; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--terracota-clr); cursor: pointer; position: relative; }
   .step.done { background: var(--bege-rosa); border-color: var(--terracota-med); }
@@ -49,32 +47,24 @@
   .step.done .checkbox { background: var(--terracota); border-color: var(--terracota); }
   .checkbox svg { display: none; stroke: white; }
   .step.done .checkbox svg { display: block; }
-  
   .step-body { flex: 1; }
   .step-title { font-size: 13.5px; font-weight: 600; color: var(--marrom-escuro); margin-bottom: 3px; }
   .step-desc { font-style: italic; font-size: 11.5px; color: var(--marrom-claro); line-height: 1.6; }
   .step-tag { display: inline-block; background: var(--bege-quente); color: var(--terracota); font-size: 10px; padding: 2px 8px; border-radius: 20px; margin-top: 5px; }
-  .step-num { position: absolute; top: 10px; right: 12px; font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--terracota-clr); }
 
-  .destaque { background: var(--bege-suave); border: 1px solid var(--terracota-clr); border-radius: 12px; padding: 11px 14px; margin-bottom: 14px; font-style: italic; font-size: 12px; color: var(--terracota); text-align: center; }
-  .aviso { background: #F9EDE8; border: 1px solid var(--vermelho); border-radius: 12px; padding: 12px 14px; margin: 14px 0; font-style: italic; font-size: 12px; color: var(--vermelho); text-align: center; }
-
-  /* Estilo da Aba de Configurações (Fiel às suas Fotos) */
+  /* Configurações Estilo Foto */
   .config-title { font-family: 'Cormorant Garamond', serif; font-size: 14px; letter-spacing: 4px; color: var(--marrom-medio); text-transform: uppercase; margin: 30px 0 20px; text-align: center; }
-  .config-field { margin-bottom: 16px; padding: 0 10px; }
+  .config-field { margin-bottom: 16px; }
   .config-label { font-size: 11px; color: var(--marrom-claro); font-style: italic; display: block; margin-bottom: 6px; }
   .config-input { width: 100%; padding: 12px 16px; background: var(--bege-suave); border: 1px solid var(--terracota-clr); border-radius: 30px; font-family: 'Lora', serif; font-size: 13px; outline: none; }
+  .add-btn { width: 100%; padding: 15px; border: 2px dashed var(--terracota-clr); border-radius: 14px; color: var(--terracota-med); font-family: 'Lora', serif; cursor: pointer; text-align: center; margin: 20px 0; }
 
-  .add-product-btn { margin: 25px 10px; padding: 15px; border: 2px dashed var(--terracota-clr); border-radius: 14px; color: var(--terracota-med); font-family: 'Lora', serif; cursor: pointer; text-align: center; transition: 0.3s; font-size: 13px; }
-  
-  /* Modal de Adição */
   #add-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1001; padding: 20px; align-items: center; justify-content: center; }
-  .modal-box { background: var(--branco); padding: 24px; border-radius: 20px; width: 100%; max-width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-  .modal-box h3 { font-family: 'Cormorant Garamond', serif; margin-bottom: 15px; color: var(--terracota); letter-spacing: 2px; }
-  .modal-box input, .modal-box select { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid var(--terracota-clr); font-family: 'Lora', serif; }
+  .modal-box { background: var(--branco); padding: 24px; border-radius: 20px; width: 100%; max-width: 350px; }
+  .modal-box input, .modal-box select { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid var(--terracota-clr); }
   .modal-btns { display: flex; gap: 10px; }
-  .btn-confirm { background: var(--terracota); color: white; border: none; padding: 12px; flex: 1; border-radius: 10px; cursor: pointer; }
-  .btn-cancel { background: var(--bege-quente); color: var(--marrom-escuro); border: none; padding: 12px; flex: 1; border-radius: 10px; cursor: pointer; }
+  .btn-confirm { background: var(--terracota); color: white; border: none; padding: 12px; flex: 1; border-radius: 10px; }
+  .btn-cancel { background: var(--bege-quente); padding: 12px; flex: 1; border-radius: 10px; border: none; }
 </style>
 </head>
 <body>
@@ -94,52 +84,58 @@
 </div>
 <div class="tabs-row2">
   <div class="tab" onclick="showTab('peeling',this)"><span class="tab-emoji">✦</span>Peeling</div>
-  <div class="tab" onclick="showTab('historico',this)"><span class="tab-emoji">📅</span>Histórico</div>
   <div class="tab" onclick="showTab('config',this)"><span class="tab-emoji">⚙️</span>Config.</div>
 </div>
 
 <div class="content active" id="tab-manha">
   <div class="progress-wrap"><div class="progress-bar-bg"><div class="progress-bar" id="bar-manha"></div></div><span class="progress-text" id="txt-manha"></span></div>
-  <div class="destaque">Acorda · banho primeiro · rápida antes de sair ✨</div>
-  
-  <div class="section-divider"><span>🚿 Banho</span></div>
+  <div class="section-divider"><span>✨ Rosto</span></div>
   <div class="step" data-key="m1" onclick="toggle(this,'manha')">
     <div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div>
-    <div class="step-body"><div class="step-title class-mousse">Mousse Anti-Oleosidade</div><div class="step-desc">No rosto.</div></div><span class="step-num">01</span>
+    <div class="step-body"><div class="step-title class-mousse">Mousse Anti-Oleosidade</div><div class="step-desc">No rosto.</div></div>
   </div>
-
-  <div class="section-divider"><span>✨ Rosto</span></div>
   <div class="step" data-key="m2" onclick="toggle(this,'manha')">
     <div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div>
-    <div class="step-body"><div class="step-title class-gel">Gel Anti-Oleosidade</div><div class="step-desc">Camada fina — leave-on, não enxague.</div><span class="step-tag">2x ao dia — 1ª aplicação</span></div><span class="step-num">02</span>
+    <div class="step-body"><div class="step-title class-gel">Gel Anti-Oleosidade</div><div class="step-desc">Camada fina — leave-on, não enxague.</div><span class="step-tag">2x ao dia — 1ª aplicação</span></div>
   </div>
   <div class="step" data-key="m3" onclick="toggle(this,'manha')">
     <div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div>
-    <div class="step-body"><div class="step-title class-serum">Sérum Secativo ✦</div><div class="step-desc">Movimentos circulares sobre o gel.</div><span class="step-tag">3x ao dia — 1ª aplicação</span></div><span class="step-num">03</span>
+    <div class="step-body"><div class="step-title class-serum">Sérum Secativo ✦</div><div class="step-desc">Movimentos circulares sobre o gel.</div><span class="step-tag">3x ao dia — 1ª aplicação</span></div>
   </div>
-
   <div class="section-divider"><span>💄 Finalização</span></div>
   <div class="step" data-key="m4" onclick="toggle(this,'manha')">
     <div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div>
-    <div class="step-body"><div class="step-title class-protetor">Protetor Solar ☀️</div><div class="step-desc">Obrigatório — antes da maquiagem.</div></div><span class="step-num">04</span>
-  </div>
-  <div class="step" data-key="m5" onclick="toggle(this,'manha')">
-    <div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div>
-    <div class="step-body"><div class="step-title">Primer + Maquiagem 💄</div><div class="step-desc">Após o protetor secar — pronta pra ir!</div></div><span class="step-num">05</span>
+    <div class="step-body"><div class="step-title class-protetor">Protetor Solar ☀️</div><div class="step-desc">Obrigatório — antes da maquiagem.</div></div>
   </div>
   <div id="extra-manha"></div>
 </div>
 
 <div class="content" id="tab-noite-af">
   <div class="progress-wrap"><div class="progress-bar-bg"><div class="progress-bar" id="bar-noite-af"></div></div><span class="progress-text" id="txt-noite-af"></span></div>
-  <div class="destaque">⚡ 1 dia sim · 1 dia não — nunca com ácidos</div>
-  <div class="section-divider"><span>🧴 Limpeza</span></div>
   <div class="step" onclick="toggle(this,'noite-af')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title">Remove maquiagem</div><div class="step-desc">Lenço umedecido ou água micelar.</div></div></div>
   <div class="step" onclick="toggle(this,'noite-af')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-mousse">Mousse Anti-Oleosidade</div><div class="step-desc">Limpeza do rosto — enxague bem.</div></div></div>
-  <div class="section-divider"><span>⚡ Tratamento</span></div>
   <div class="step" onclick="toggle(this,'noite-af')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title">Alta Frequência ⚡</div><div class="step-desc">3-5 min no rosto, circulares.</div></div></div>
-  <div class="step" onclick="toggle(this,'noite-af')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-hidra-f">Hidratante Facial</div><div class="step-desc">Fecha toda a rotina. 🤍</div></div></div>
   <div id="extra-noite-af"></div>
+</div>
+
+<div class="content" id="tab-noite-ac">
+  <div class="progress-wrap"><div class="progress-bar-bg"><div class="progress-bar" id="bar-noite-ac"></div></div><span class="progress-text" id="txt-noite-ac"></span></div>
+  <div class="step" onclick="toggle(this,'noite-ac')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-trane">Tranexâmico Creamy</div><div class="step-desc">Camada fina sobre a pele seca.</div></div></div>
+  <div class="step" onclick="toggle(this,'noite-ac')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-mande">Mandélico Creamy</div><div class="step-desc">Apenas nas áreas com manchas.</div></div></div>
+  <div id="extra-noite-ac"></div>
+</div>
+
+<div class="content" id="tab-virilha">
+  <div class="progress-wrap"><div class="progress-bar-bg"><div class="progress-bar" id="bar-virilha"></div></div><span class="progress-text" id="txt-virilha"></span></div>
+  <div class="step" onclick="toggle(this,'virilha')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-sabo-v">Sabonete Salicílico</div><div class="step-desc">Lavagem suave da área.</div></div></div>
+  <div class="step" onclick="toggle(this,'virilha')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-hidra-c">Hidratante corporal</div><div class="step-desc">Finalização com hidratação.</div></div></div>
+  <div id="extra-virilha"></div>
+</div>
+
+<div class="content" id="tab-peeling">
+  <div class="progress-wrap"><div class="progress-bar-bg"><div class="progress-bar" id="bar-peeling"></div></div><span class="progress-text" id="txt-peeling"></span></div>
+  <div class="step" onclick="toggle(this,'peeling')"><div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title class-peel-ret">Retinóico — 8 minutos</div><div class="step-desc">Cronometrar rigorosamente.</div></div></div>
+  <div id="extra-peeling"></div>
 </div>
 
 <div class="content" id="tab-config">
@@ -151,29 +147,25 @@
   <div class="config-field"><label class="config-label">Mandélico</label><input type="text" class="config-input" id="in-mande" onchange="saveName('mande')"></div>
   <div class="config-field"><label class="config-label">Hidratante facial</label><input type="text" class="config-input" id="in-hidra-f" onchange="saveName('hidra-f')"></div>
   <div class="config-field"><label class="config-label">Protetor solar</label><input type="text" class="config-input" id="in-protetor" onchange="saveName('protetor')"></div>
-
   <div class="config-title">✿ PRODUTOS — VIRILHA</div>
   <div class="config-field"><label class="config-label">Sabonete salicílico</label><input type="text" class="config-input" id="in-sabo-v" onchange="saveName('sabo-v')"></div>
   <div class="config-field"><label class="config-label">Hidratante corporal</label><input type="text" class="config-input" id="in-hidra-c" onchange="saveName('hidra-c')"></div>
-
   <div class="config-title">✦ PRODUTOS — PEELING</div>
   <div class="config-field"><label class="config-label">Peeling retinóico</label><input type="text" class="config-input" id="in-peel-ret" onchange="saveName('peel-ret')"></div>
-  <div class="config-field"><label class="config-label">TCA (concentração/descrição)</label><input type="text" class="config-input" id="in-peel-tca" onchange="saveName('peel-tca')"></div>
-
-  <div class="add-product-btn" onclick="openModal()">+ Adicionar novo produto</div>
-  <span style="display:block; text-align:center; font-size:11px; color:var(--marrom-claro); cursor:pointer; text-decoration:underline;" onclick="localStorage.clear(); location.reload();">↺ Restaurar padrões</span>
+  <div class="add-btn" onclick="openModal()">+ Adicionar novo produto</div>
 </div>
 
 <div id="add-modal">
   <div class="modal-box">
     <h3>Novo Passo</h3>
     <input type="text" id="new-name" placeholder="Nome do produto">
-    <input type="text" id="new-desc" placeholder="Descrição (ex: camada fina)">
+    <input type="text" id="new-desc" placeholder="Descrição">
     <select id="new-tab">
       <option value="manha">Manhã</option>
       <option value="noite-af">Noite AF</option>
       <option value="noite-ac">Noite Ácidos</option>
       <option value="virilha">Virilha</option>
+      <option value="peeling">Peeling</option>
     </select>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
@@ -197,23 +189,20 @@
 
   function updateProgress(tabId) {
     const parent = document.getElementById('tab-' + tabId);
-    if(!parent) return;
     const total = parent.querySelectorAll('.step').length;
     const done = parent.querySelectorAll('.step.done').length;
-    const bar = document.getElementById('bar-' + tabId);
-    const txt = document.getElementById('txt-' + tabId);
-    if(bar) bar.style.width = (total > 0 ? (done/total*100) : 0) + '%';
-    if(txt) txt.innerText = done + ' / ' + total;
+    document.getElementById('bar-'+tabId).style.width = (total > 0 ? (done/total*100) : 0) + '%';
+    document.getElementById('txt-'+tabId).innerText = done + ' / ' + total;
   }
 
-  // Sincronização de Nomes
-  const fieldIds = ['mousse','gel','serum','trane','mande','hidra-f','protetor','sabo-v','hidra-c','peel-ret','peel-tca'];
   function saveName(id) {
     localStorage.setItem('p-'+id, document.getElementById('in-'+id).value);
     applyNames();
   }
+
   function applyNames() {
-    fieldIds.forEach(id => {
+    const ids = ['mousse','gel','serum','trane','mande','hidra-f','protetor','sabo-v','hidra-c','peel-ret'];
+    ids.forEach(id => {
       const val = localStorage.getItem('p-'+id);
       if(val) {
         document.getElementById('in-'+id).value = val;
@@ -222,17 +211,14 @@
     });
   }
 
-  // Lógica de Novos Produtos
   function openModal() { document.getElementById('add-modal').style.display = 'flex'; }
   function closeModal() { document.getElementById('add-modal').style.display = 'none'; }
-  
   function addProduct() {
     const name = document.getElementById('new-name').value;
     const desc = document.getElementById('new-desc').value;
     const tab = document.getElementById('new-tab').value;
-    if(!name) return;
     const extras = JSON.parse(localStorage.getItem('extras') || '[]');
-    extras.push({ name, desc, tab, id: Date.now() });
+    extras.push({ name, desc, tab });
     localStorage.setItem('extras', JSON.stringify(extras));
     renderExtras();
     closeModal();
@@ -242,23 +228,16 @@
     document.querySelectorAll('.extra-step').forEach(e => e.remove());
     const extras = JSON.parse(localStorage.getItem('extras') || '[]');
     extras.forEach(item => {
-      const target = document.getElementById('extra-' + item.tab);
-      if(target) {
-        const div = document.createElement('div');
-        div.className = 'step extra-step';
-        div.onclick = function() { toggle(this, item.tab); };
-        div.innerHTML = `<div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title">${item.name}</div><div class="step-desc">${item.desc}</div></div>`;
-        target.appendChild(div);
-      }
+      const div = document.createElement('div');
+      div.className = 'step extra-step';
+      div.onclick = function() { toggle(this, item.tab); };
+      div.innerHTML = `<div class="checkbox"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M1 5L5 9L13 1" stroke-width="2" stroke-linecap="round" fill="none" stroke="white"/></svg></div><div class="step-body"><div class="step-title">${item.name}</div><div class="step-desc">${item.desc}</div></div>`;
+      document.getElementById('extra-' + item.tab).appendChild(div);
     });
     ['manha','noite-af','noite-ac','virilha','peeling'].forEach(updateProgress);
   }
 
-  window.onload = () => {
-    applyNames();
-    renderExtras();
-    ['manha','noite-af','noite-ac','virilha','peeling'].forEach(updateProgress);
-  };
+  window.onload = () => { applyNames(); renderExtras(); ['manha','noite-af','noite-ac','virilha','peeling'].forEach(updateProgress); };
 </script>
 </body>
 </html>
